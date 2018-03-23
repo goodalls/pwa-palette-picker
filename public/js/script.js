@@ -1,3 +1,13 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+  .then(registration => {
+    console.log('registration success');
+  })
+  .catch(err => {
+    console.log(`service worker registration failed: ${err}`);
+  });
+}
+
 const coloring = event => {
   if (
     (document.activeElement.tagName !== 'INPUT' && event.keyCode === 32) ||
